@@ -1,0 +1,29 @@
+﻿.index {
+
+text-align:center;
+
+background-color: lightpink; 
+ border-color: aqua;
+ font-weight: bold;
+
+ margin: 150px;
+ 
+ padding: 24px 40px;
+
+ font-size: 18px;
+
+ border-radius: 50px;
+ font-size: 28px;
+    color: forestgreen;
+    padding: 2px 0 10px 0;
+    font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+
+ }
+
+body {
+background-color: magenta;
+
+}

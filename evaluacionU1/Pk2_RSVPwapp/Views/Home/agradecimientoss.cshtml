@@ -1,0 +1,55 @@
+﻿@model Pk2_RSVPwapp.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css3.css" />
+    <title>agradecimientoss</title>
+</head>
+<body>
+
+    @{
+        try {
+            WebMail.SmtpServer = "smtp.gmail.com";
+            WebMail.SmtpPort = 587;
+            WebMail.EnableSsl = true;
+            WebMail.UserName = "karymnict@gmail.com";
+            WebMail.Password = "padrinosmagicos";
+            WebMail.From = "karymnict@gmail.com";
+            WebMail.Send("karymnict@gmailcom", "Notification RSVP", Model.Name + ((Model.WillAttend ?? false) ?"": "no")+ "Atendera");
+        }catch (Exception){
+            @: <b>Error: No se puedo enviar para confirmar </b>
+            
+        }
+        
+        }
+    <div>
+        <h1>¡Gracias, @Model.Name! </h1>
+        @if (Model.WillAttend == true)
+        { 
+        @: Que bueno que vendras, Las chelas estaran lista en el refri!.
+
+
+            
+        }
+        
+        else
+        {
+        @: Siento mucho que no puedas venir! :(, pero muchas gracias por informarlo 
+        }
+        <div class="hola">
+
+            <img src="~/Content/IMG_1736.JPG"     width="300"  height="300" />
+
+
+        </div>
+    </div>
+</body>
+    
+</html>

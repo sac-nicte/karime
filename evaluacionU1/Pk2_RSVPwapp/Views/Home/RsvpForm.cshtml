@@ -1,0 +1,51 @@
+﻿@model Pk2_RSVPwapp.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/CSS.css" />
+    @*<link rel="stylesheet" type="text/css" href="~/Content/css2.css" />*@
+
+    <title>RsvpForm</title>
+</head>
+<body>
+  
+     <div class="form">  
+   @using (Html.BeginForm())
+   { 
+       @* validacion del formulario *@
+       @Html.ValidationSummary()
+
+   <p>TU NOMBRE: @Html.TextBoxFor(x => x.Name)</p>
+   <p>TU CORREO ELECTRONICO: @Html.TextBoxFor(x => x.Email)</p>   
+   <p>TU TELEFONO: @Html.TextBoxFor(x => x.Phone)</p>
+       <p>
+          ¿ASISTIRAS A LA FIETA?
+           @Html.DropDownListFor(x=> x.WillAttend, 
+           new[]
+           {
+           new SelectListItem(){Text="Si ahi estare",
+           Value = bool.TrueString},
+           new SelectListItem(){Text="No, no podre asistir",
+           Value = bool.FalseString},
+           },
+           "Escoje una opcion"
+           )
+
+
+       </p>
+  
+      
+       <input type="submit" value="Submit RSVP" class="botton1" title="enviar"  />  
+       
+
+   }
+         </div>
+</body>
+</html>
